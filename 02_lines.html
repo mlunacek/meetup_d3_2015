@@ -42,13 +42,6 @@ var margin = {top: 20, right: 50, bottom: 20, left:50},
 
 function draw_timeseries(data){
 
-
-    var svg_ts = d3.select("#graph").append("svg")
-            .attr("width", width*2 + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
     var nodes = d3.keys(data[0]).filter(function(x) { return x !== "index"; });
     var parseDate = d3.time.format("%Y-%m-%d %H:%M:%S").parse;
 
@@ -72,6 +65,12 @@ function draw_timeseries(data){
     var y_scale = d3.scale.linear()
                 .domain(d3.extent(yvals))
                 .range([height, 0]);
+    
+    var svg_ts = d3.select("#graph").append("svg")
+            .attr("width", width*2 + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     
     var line = d3.svg.line()
         .x(function(d) { return x_scale(d.x); })

@@ -376,29 +376,65 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Outline">Outline<a class="anchor-link" href="#Outline">&#182;</a></h2><h4 id="How-I-use-d3.js-at-NREL.">How I use <code>d3.js</code> at NREL.<a class="anchor-link" href="#How-I-use-d3.js-at-NREL.">&#182;</a></h4><ul>
+<h2 id="Outline">Outline<a class="anchor-link" href="#Outline">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="How-I-use-d3.js-at-NREL.">How I use <code>d3.js</code> at NREL.<a class="anchor-link" href="#How-I-use-d3.js-at-NREL.">&#182;</a></h4><ul>
 <li><code>Python</code> + <code>d3.js</code></li>
-<li>Motivating examples (maybe)</li>
 </ul>
 <p><a href="http://mlunacek.org/15_construction/index.html">Construction</a></p>
 <p><a href="http://mlunacek.org/19_real_time/index.html">Markets and EVs</a></p>
 <p><a href="http://mlunacek.org/22_hems_solar_pen/index.html">HEMS and solar</a></p>
 <p><a href="http://mlunacek.org/01_voltage/index.html">Voltage and Load</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="What-are-the-key-challenges-when-adding-interaction?">What are the key challenges when adding interaction?<a class="anchor-link" href="#What-are-the-key-challenges-when-adding-interaction?">&#182;</a></h4><ul>
-<li><code>javascript</code> as a data structure manipulation tool...</li>
+<li>Data manipulation with <code>javascript</code>.</li>
 <li>Selecting objects from objects.</li>
 </ul>
-<h4 id="Learn-by-Example">Learn by Example<a class="anchor-link" href="#Learn-by-Example">&#182;</a></h4><p><a href="01_graph.html">1. graph</a></p>
-<p><a href="02_lines.html">2. line</a></p>
-<p><a href="03_together.html">3. graph + line</a></p>
-<p><a href="04_voronoi_graph.html">4. voronoi graph</a></p>
-<p><a href="05_voronoi_together.html">5. voronoi interaction</a></p>
-<p><a href="06_lines.html">6. final</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Learn-by-Example">Learn by Example<a class="anchor-link" href="#Learn-by-Example">&#182;</a></h4><p><a href="http://mlunacek.org/meetup_d3_2015/01_graph.html">1. graph</a></p>
+<p><a href="http://mlunacek.org/meetup_d3_2015/02_lines.html">2. line</a></p>
+<p><a href="http://mlunacek.org/meetup_d3_2015/03_together.html">3. graph + line</a></p>
+<p><a href="http://mlunacek.org/meetup_d3_2015/04_voronoi_graph.html">4. voronoi graph</a></p>
+<p><a href="http://mlunacek.org/meetup_d3_2015/05_voronoi_together.html">5. voronoi interaction</a></p>
+<p><a href="http://mlunacek.org/meetup_d3_2015/06_final.html">6. final</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Links">Links<a class="anchor-link" href="#Links">&#182;</a></h4><p><a href="http:http://mlunacek.org/21_meetup_d3_2015/">http:http://mlunacek.org/21_meetup_d3_2015/</a></p>
 <p><a href="https://github.com/mlunacek/meetup_d3_2015">https://github.com/mlunacek/meetup_d3_2015</a></p>
 <p><a href="http://learnjsdata.com/">http://learnjsdata.com/</a></p>
 <p><a href="https://store.continuum.io/cshop/anaconda/">IPython notebook</a></p>
 <p><a href="https://www.npmjs.com/package/ijavascript">iJavascript</a></p>
+<p><a href="https://www.destroyallsoftware.com/talks/wat">Gary Bernhardt, WAT</a></p>
 
 </div>
 </div>
@@ -603,7 +639,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="kd">var</span> <span class="nx">min_x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">nodes</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="p">});</span>
@@ -611,7 +647,7 @@ div#notebook {
 
 <span class="kd">var</span> <span class="nx">x_scale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">linear</span><span class="p">()</span>
                 <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="nx">min_x</span><span class="p">,</span> <span class="nx">max_x</span><span class="p">])</span>
-                <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">]);</span>
+                <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">]);</span>
 
 <span class="nx">x_scale</span><span class="p">(</span><span class="mf">75.0</span><span class="p">)</span>
 </pre></div>
@@ -624,11 +660,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>64.61642534221002</pre>
+<pre>323.08212671105014</pre>
 </div>
 
 </div>
@@ -648,7 +684,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="nx">nodes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
@@ -662,7 +698,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -681,7 +717,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="kd">var</span> <span class="nx">xvals</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">pluck</span><span class="p">(</span><span class="nx">nodes</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
@@ -698,7 +734,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -723,7 +759,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="nx">d3</span><span class="p">.</span><span class="nx">extent</span><span class="p">(</span><span class="nx">yvals</span><span class="p">)</span>
@@ -737,7 +773,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -752,7 +788,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="kd">var</span> <span class="nx">x_scale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">linear</span><span class="p">()</span>
@@ -772,7 +808,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -851,7 +887,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="nx">node_map</span> <span class="o">=</span> <span class="p">{}</span>
@@ -868,24 +904,24 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{ B11: { y: 87.7289538569919, x: 70.23151622240047, name: &apos;B11&apos; },
-  B0: { y: 10.9347481507573, x: 22.48328225904828, name: &apos;B0&apos; },
-  B1: { y: 32.632529059528004, x: 68.6586253932227, name: &apos;B1&apos; },
-  B2: { y: 0, x: 0, name: &apos;B2&apos; },
-  B3: { y: 63.87130151461782, x: 5.148214001870468, name: &apos;B3&apos; },
-  B10: { y: 100, x: 89.05815075354593, name: &apos;B10&apos; },
-  B6: { y: 77.36218738992604, x: 46.36201995408859, name: &apos;B6&apos; },
-  B7: { y: 42.31771750616414, x: 42.2407132902806, name: &apos;B7&apos; },
-  B8: { y: 91.13464247974639, x: 26.55986041749069, name: &apos;B8&apos; },
-  B13: { y: 60.25449101796407, x: 35.45358770668451, name: &apos;B13&apos; },
-  B4: { y: 6.879623106727717, x: 100, name: &apos;B4&apos; },
-  B9: { y: 29.013957379358935, x: 20.507834881580358, name: &apos;B9&apos; },
-  B12: { y: 3.0644593166607836, x: 50.25894477693045, name: &apos;B12&apos; },
-  B5: { y: 14.70368087354702, x: 74.08334288280761, name: &apos;B5&apos; } }</pre>
+<pre>{ B11: { y: -169.37, x: 90.19, name: &apos;B11&apos; },
+  B0: { y: 179.46, x: -38.979, name: &apos;B0&apos; },
+  B1: { y: 80.9, x: 85.935, name: &apos;B1&apos; },
+  B2: { y: 229.13, x: -99.801, name: &apos;B2&apos; },
+  B3: { y: -60.999, x: -85.874, name: &apos;B3&apos; },
+  B10: { y: -225.11, x: 141.12, name: &apos;B10&apos; },
+  B6: { y: -122.28, x: 25.618, name: &apos;B6&apos; },
+  B7: { y: 36.906, x: 14.469, name: &apos;B7&apos; },
+  B8: { y: -184.84, x: -27.951, name: &apos;B8&apos; },
+  B13: { y: -44.57, x: -3.8916, name: &apos;B13&apos; },
+  B4: { y: 197.88, x: 170.72, name: &apos;B4&apos; },
+  B9: { y: 97.337, x: -44.323, name: &apos;B9&apos; },
+  B12: { y: 215.21, x: 36.16, name: &apos;B12&apos; },
+  B5: { y: 162.34, x: 100.61, name: &apos;B5&apos; } }</pre>
 </div>
 
 </div>
@@ -906,7 +942,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="nx">edges</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
@@ -927,22 +963,22 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[ { source: &apos;B0&apos;,
     target: &apos;B9&apos;,
-    x1: 22.48328225904828,
-    y1: 10.9347481507573,
-    x2: 20.507834881580358,
-    y2: 29.013957379358935 },
+    x1: -38.979,
+    y1: 179.46,
+    x2: -44.323,
+    y2: 97.337 },
   { source: &apos;B0&apos;,
     target: &apos;B2&apos;,
-    x1: 22.48328225904828,
-    y1: 10.9347481507573,
-    x2: 0,
-    y2: 0 } ]</pre>
+    x1: -38.979,
+    y1: 179.46,
+    x2: -99.801,
+    y2: 229.13 } ]</pre>
 </div>
 
 </div>
@@ -1845,7 +1881,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="kd">var</span> <span class="nx">nodes</span><span class="p">;</span>
@@ -1878,15 +1914,15 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[ { y: 12.271046143008101, x: 70.23151622240047, name: &apos;B11&apos; },
-  { y: 89.0652518492427, x: 22.48328225904828, name: &apos;B0&apos; },
-  { y: 67.367470940472, x: 68.6586253932227, name: &apos;B1&apos; },
-  { y: 100, x: 0, name: &apos;B2&apos; },
-  { y: 36.12869848538218, x: 5.148214001870468, name: &apos;B3&apos; } ]</pre>
+<pre>[ { y: 87.7289538569919, x: 70.23151622240047, name: &apos;B11&apos; },
+  { y: 10.9347481507573, x: 22.48328225904828, name: &apos;B0&apos; },
+  { y: 32.632529059528004, x: 68.6586253932227, name: &apos;B1&apos; },
+  { y: 0, x: 0, name: &apos;B2&apos; },
+  { y: 63.87130151461782, x: 5.148214001870468, name: &apos;B3&apos; } ]</pre>
 </div>
 
 </div>
@@ -1909,7 +1945,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span class="kd">var</span> <span class="nx">voronoi</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geom</span><span class="p">.</span><span class="nx">voronoi</span><span class="p">()</span>
@@ -1927,19 +1963,19 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[ [ [ 31.72431090307535, 281.7238083322705 ],
-    [ 42.50781405200926, 364.07505885057714 ],
-    [ 286.8084365409115, 140.85599348710764 ],
-    [ 132.54135346361488, 143.47878662449483 ],
+<pre>[ [ [ 49.447611027575675, 102.92076721819133 ],
+    [ 52.04371502224199, 136.21100419682622 ],
+    [ 102.20926983914997, 59.24539017252721 ],
+    [ 67.99202686832041, 60.22222294368489 ],
     point: { y: -169.37, x: 90.19, name: &apos;B11&apos; } ],
-  [ [ -119.08888868070906, -43.43762517942245 ],
-    [ 26.287118348384297, -33.977554534615564 ],
-    [ 26.78880405622956, -38.068080601929154 ],
-    [ -28.527703513187376, -154.3317746511157 ],
+  [ [ 5.059603319360338, 18.17845764897366 ],
+    [ 39.75826053150617, 21.969849091694513 ],
+    [ 40.483575556568155, 21.51322049469029 ],
+    [ 26.845819003793515, -26.616871054160075 ],
     point: { y: 179.46, x: -38.979, name: &apos;B0&apos; } ] ]</pre>
 </div>
 
@@ -1951,11 +1987,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span class="nx">voronoi</span><span class="p">(</span><span class="nx">nodes</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span> <span class="nx">v</span><span class="p">.</span><span class="nx">point</span><span class="p">.</span><span class="nx">cell</span> <span class="o">=</span> <span class="nx">v</span><span class="p">;</span> <span class="p">});</span>
-<span class="nx">nodes</span>
+<div class=" highlight hl-javascript"><pre><span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">voronoi</span><span class="p">(</span><span class="nx">nodes</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
 </pre></div>
 
 </div>
@@ -1966,136 +2001,69 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[ { y: -169.37,
-    x: 90.19,
-    name: &apos;B11&apos;,
-    cell: [ [Object], [Object], [Object], [Object], point: [Circular] ] },
-  { y: 179.46,
-    x: -38.979,
-    name: &apos;B0&apos;,
-    cell: [ [Object], [Object], [Object], [Object], point: [Circular] ] },
-  { y: 80.9,
-    x: 85.935,
-    name: &apos;B1&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: 229.13,
-    x: -99.801,
-    name: &apos;B2&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: -60.999,
-    x: -85.874,
-    name: &apos;B3&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: -225.11,
-    x: 141.12,
-    name: &apos;B10&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: -122.28,
-    x: 25.618,
-    name: &apos;B6&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: 36.906,
-    x: 14.469,
-    name: &apos;B7&apos;,
-    cell: [ [Object], [Object], [Object], [Object], point: [Circular] ] },
-  { y: -184.84,
-    x: -27.951,
-    name: &apos;B8&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: -44.57,
-    x: -3.8916,
-    name: &apos;B13&apos;,
-    cell: [ [Object], [Object], [Object], [Object], point: [Circular] ] },
-  { y: 197.88,
-    x: 170.72,
-    name: &apos;B4&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: 97.337,
-    x: -44.323,
-    name: &apos;B9&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: 215.21,
-    x: 36.16,
-    name: &apos;B12&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] },
-  { y: 162.34,
-    x: 100.61,
-    name: &apos;B5&apos;,
-    cell: 
-     [ [Object],
-       [Object],
-       [Object],
-       [Object],
-       [Object],
-       point: [Circular] ] } ]</pre>
+<pre>undefined</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span class="nx">d</span><span class="p">.</span><span class="nx">point</span><span class="p">.</span><span class="nx">name</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;B11&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span class="nx">d</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;49.447611027575675,102.92076721819133,52.04371502224199,136.21100419682622,102.20926983914997,59.24539017252721,67.99202686832041,60.22222294368489&apos;</pre>
 </div>
 
 </div>
