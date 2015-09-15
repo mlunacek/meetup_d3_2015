@@ -2,7 +2,7 @@
 
 You can follow along in the notebook,
 
-[https://github.com/mlunacek/meetup_d3_2015/blob/master/examples/javascript.ipynb](https://github.com/mlunacek/meetup_d3_2015/blob/master/examples/javascript.ipynb)
+[http://github.com/mlunacek/meetup_d3_2015/blob/master/examples/javascript.ipynb](http://github.com/mlunacek/meetup_d3_2015/blob/master/examples/javascript.ipynb)
 
 or clone the repository and run:
 
@@ -11,7 +11,7 @@ or clone the repository and run:
     
 You can also follow view the code here:
 
-[https://mlunacek.org/21_meetup_d3_2015](https://mlunacek.org/21_meetup_d3_2015)
+[http://mlunacek.org/21_meetup_d3_2015](https://mlunacek.org/21_meetup_d3_2015)
 
 
 
