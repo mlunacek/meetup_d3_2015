@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+    <title></title>
+<style>
+@import url(css/style.css);
+
+.voronoi path {
+  fill: none;
+  stroke: "red";
+  stroke-opacity: 0.5;
+  stroke-width: 0.5;
+  pointer-events: all;
+}
+
+#graph1{
+    width: 300px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+
+#graph2{
+    width: 500px;
+    margin: 0px;
+    margin-left: 30px;
+    padding: 0px;
+    float: left;
+}
+
+
+</style>
+</head>
+<body>
+
+    <div id="header" class="clearfix">
+    <h1>Voronoi Network and Load</h1>
+    <nav><ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="04_voronoi_graph.html">previous</a></li>
+        <li><a href="06_final.html">next</a></li>
+    </ul></nav>
+    </div>
+
+    <div id="graph1"></div>
+    <div id="graph2"></div>
+
+<script src="js/d3.v3.min.js"></script>
+<script src="js/lodash.min.js"></script>
+
+<script>
+
+function draw_timeseries(data){
+
+    var margin = {top: 20, right: 20, bottom: 20, left:20},
+    width = 500 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+
+    var svg_ts = d3.select("#graph2").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var nodes = d3.keys(data[0]).filter(function(x) { return x !== "index"; });
+    var parseDate = d3.time.format("%Y-%m-%d %H:%M:%S").parse;
+
+    var load_json = nodes.map(function(name) {
+            return {
+              "name": name,
+              "values": data.map(function(d) { return { "x": parseDate(d.index), "y": +d[name] }; })
+            };
+        });
+
+    var values = _.pluck(load_json, 'values');
+    values = _.flatten(values);
+
+    var xvals = _.pluck(values, 'x');
+    var yvals = _.pluck(values, 'y');
+    
+    var x_scale = d3.time.scale()
+                .domain(d3.extent(xvals))
+                .range([0, width]);
+
+    var y_scale = d3.scale.linear()
+                .domain(d3.extent(yvals))
+                .range([height, 0]);
+    
+    var line = d3.svg.line()
+        .x(function(d) { return x_scale(d.x); })
+        .y(function(d) { return y_scale(d.y); })
+        .interpolate("cardinal");
+
+    var xAxis = d3.svg.axis()
+        .scale(x_scale)
+        .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+        .scale(y_scale)
+        .orient("left");
+
+    svg_ts.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+
+    svg_ts.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")").call(xAxis);
+
+    svg_ts.selectAll("path")
+        .data(load_json)
+        .enter()
+        .append("path")
+        .attr("class", "regular_line")
+        .attr("id", function(d) { return d.name +"_line"; })
+        .attr("d", function(d) { return line(d.values) });
+
+}
+
+
+function draw_graph(nodes, edges){
+    
+    var margin = {top: 50, right: 40, bottom: 40, left:50 },
+        width = 300 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+    var svg = d3.select("#graph1").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var xvals = _.pluck(nodes, "x");
+    var yvals = _.pluck(nodes, "y");
+
+    var x_scale = d3.scale.linear()
+                    .domain(d3.extent(xvals))
+                    .range([0, width]);
+
+    var y_scale = d3.scale.linear()
+                    .domain(d3.extent(yvals))
+                    .range([height, 0]);
+
+    var node_map = {};
+    nodes.forEach(function(d) {
+        d.x = x_scale(d.x);
+        d.y = y_scale(d.y); 
+        node_map[d.name] = d;
+    });
+                    
+    edges.forEach(function(d) {
+        d.x1 = node_map[d.source].x;
+        d.y1 = node_map[d.source].y;
+        d.x2 = node_map[d.target].x;
+        d.y2 = node_map[d.target].y;
+    });
+
+   svg.selectAll("line")
+       .data(edges)
+       .enter()
+       .append("line")
+       .attr("x1", function(d) { return d['x1']; })
+       .attr("y1", function(d) { return d['y1']; })
+       .attr("x2", function(d) { return d['x2']; })
+       .attr("y2", function(d) { return d['y2']; })
+       .attr("stroke-width", 2)
+       .attr("stroke","#d3d3d3");
+
+    svg.selectAll("circle")
+       .data(nodes)
+       .enter()
+       .append("circle")
+       .attr("cx", function(d) { return d['x']; })
+       .attr("cy", function(d) { return d['y']; })
+       .attr("r",  function(d) { return 8; })
+       .attr("fill", "grey")
+       .attr("id", function(d) { return d['name']+"_node";})
+       .attr("stroke-width",  3)
+       .attr("stroke",  "#d3d3d3");
+
+    var voronoi = d3.geom.voronoi()
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; });
+
+    voronoi_group = svg.append("g")
+          .attr("class", "voronoi");
+ 
+    voronoi_group.selectAll("path")
+          .data(voronoi(nodes))
+          .enter()
+          .append("path")
+          .attr("id", function(d) { return d['name']+"_voronoi";})
+          .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+          .on("mouseover", mouseover)
+          .on("mouseout", mouseout);
+
+
+    function mouseover(d) {
+        var circle = d3.select("#" + d.point.name + "_node");
+        circle.transition().duration(200).attr("r", 10).attr("stroke", "red"); 
+   
+        var path = d3.select("#" + d.point.name + "_line");
+        path.transition().duration(200).style("stroke", "red").style("stroke-width", 2.0); 
+    }
+    
+    function mouseout(d) {
+        var circle = d3.select("#" + d.point.name + "_node");
+        circle.transition().duration(1000).attr("r", 8).attr("stroke", "#d3d3d3"); 
+
+        var path = d3.select("#" + d.point.name + "_line");
+        path.transition().duration(200).style("stroke", "grey").style("stroke-width", 1.0); 
+
+    }
+
+}
+
+d3.json("data/example_nodes.json", function(node_data) {
+    d3.json("data/example_edges.json", function(edge_data) {
+        d3.csv("data/example_load.csv", function(load_data) {
+            
+            draw_graph(node_data, edge_data);
+            draw_timeseries(load_data);
+            
+        });
+    });
+});
+</script>
+	
+</body>	
+</html>

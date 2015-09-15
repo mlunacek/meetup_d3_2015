@@ -1,0 +1,75 @@
+
+body {
+    font-family: "Source Sans Pro",sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    margin-top: 20px;
+    font-size: 100%;
+}
+
+
+.axis path, 
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+path {
+    stroke: grey;
+    stroke-width: 1;
+    fill: none;
+}
+
+#header li {
+    display: inline;
+}
+
+#header a {
+    float: left;
+    width: 100px;
+    text-decoration: none;
+    color: lightgrey;
+    /* padding: 0.2em 0.6em; */
+}
+
+ul {
+    float: right;
+    /* width: 100%; */
+    padding: 0;
+    list-style-type: none;
+}
+
+h1{
+    font-family: "Source Sans Pro",sans-serif;
+    font-weight: 200;
+    line-height: 30px;
+    font-size: 27px;
+}
+
+#header h1{
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+#header{
+    width: 900px;
+    clear: both;
+    margin-bottom: 50px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.checkbox{  
+    width: 100px;
+    float: right;
+    margin-left: 50px;
+    margin-top: 15px;
+    color: lightgray;
+}
+
+
