@@ -2,7 +2,7 @@
 
 Example code for the September Boulder D3.js Meetup.
 
-[http://mlunacek.org/meetup_d3_2015](https://mlunacek.org/meetup_d3_2015)
+[http://mlunacek.github.io/meetup_d3_2015/](http://mlunacek.github.io/meetup_d3_2015/)
 
 You can clone the repository and run the examples locally, for example:
 
